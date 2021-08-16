@@ -81,11 +81,14 @@ echo "Checking Hack font is installed..."
 FONTDIR=~/.local/share/fonts/
 install_hack () {
 	echo "Installing Hack..."
-	curl -sL https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip -o/tmp/hack.zip
-	pushd /tmp
-	unzip hack.zip
-	mkdir -p $FONTDIR
-	mv ./ttf/* $FONTDIR
+	rm -rf /tmp/nerd-fonts || true
+	mkdir -p /tmp/nerd-fonts
+	pushd /tmp/nerd-fonts
+	curl -sL https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf -oHackMonoRegular.ttf
+	curl -sL https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete%20Mono.ttf -oHackMonoBold.ttf
+	curl -sL https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Italic/complete/Hack%20Italic%20Nerd%20Font%20Complete%20Mono.ttf -oHackMonoItalic.ttf
+	curl -sL https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/BoldItalic/complete/Hack%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf -oHackMonoBoldItalic.ttf
+	mv *.ttf $FONTDIR/
 	fc-cache -f >/dev/null
 	popd
 }
