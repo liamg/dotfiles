@@ -38,7 +38,7 @@ i3-wm.bar.workspace.urgent.background.color: #1d1f21
 i3-wm.bar.workspace.urgent.text.color: #bb1111
 
 ! Sets i3 font for dialogs
-i3-wm.bar.font: pango:Hack Nerd Font Mono 10
+i3-wm.bar.font: pango: Hack Nerd Font Mono 10
 !i3-wm.bar.font: pango:Material Design Icons 18, Hack Nerd Font Mono Nerd Font Mono 16
 ! i3-wm.font i3-wm.font pango:Source Code Pro Medium 13
 

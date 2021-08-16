@@ -18,12 +18,16 @@ install git
 install nvim neovim
 install rg ripgrep
 install flameshot
+install pip3 python3-pip
+
+which node >/dev/null || snap install node --classic
+pip install psutil
 
 echo "Checking vim-plug is installed..."
 target="${XDG_DATA_HOME:-$HOME/.config}"/nvim/autoload/
 mkdir -p $target
 chmod +rwx $target
-[[ -d $vimplug_target ]] || ( echo "Installing vim-plug..." && curl -sfLo $target/plug.vim --create-dirs 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+[[ -f "${target}/plug.vim" ]] || ( echo "Installing vim-plug..." && curl -sfLo $target/plug.vim --create-dirs 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
 
 install_yarn(){
 	echo
@@ -46,7 +50,8 @@ nvim +GoInstallBinaries +qall
 
 # ensure directory exists
 echo "Checking regolith config location exists..."
-mkdir -p ~/.config/regolith
+mkdir -p ~/.config/regolith/i3
+[[ -f ~/.config/regolith/i3/config ]] || cp /etc/regolith/i3/config ~/.config/regolith/i3/config
 
 # install bumblebee-status
 echo "Checking bumblebee-status is installed..."
