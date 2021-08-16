@@ -2,7 +2,9 @@
 
 set -e
 
-i3config=~/.config/regolith/i3/config
+i3configdir=~/.config/regolith/i3
+i3config=$i3configdir/config
+mkdir -p $i3configdir
 
 install () {
 	echo "Checking $1 is installed..."
@@ -55,6 +57,7 @@ echo "Checking bumblebee-status is installed..."
 
 # configure bumblebee theme
 echo "Configuring bumblebee-status theme..."
+mkdir -p ~/.config/bumblebee-status/themes
 ln -sf `pwd`/liamg.json ~/.config/bumblebee-status/themes/liamg.json
 
 # install bumblebee launcher
@@ -81,11 +84,12 @@ install_hack () {
 	curl -sL https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip -o/tmp/hack.zip
 	pushd /tmp
 	unzip hack.zip
-	cp ./ttf/* $FONTDIR
+	mkdir -p $FONTDIR
+	mv ./ttf/* $FONTDIR
 	fc-cache -f >/dev/null
 	popd
 }
-fc-list | grep 'Hack Nerd Font Mono' >/dev/null || install_hack
+fc-list | grep 'Hack:s' >/dev/null || install_hack
 
 # restart i3 with new settings
 echo "Restarting i3 with new configuration..."

@@ -1,22 +1,22 @@
 i3-wm.gaps.inner.size: 0
 gnome.wallpaper: ~/active-wallpaper
-gnome.terminal.font: Hack Nerd Font Mono 14
+gnome.terminal.font: Hack 14
 gnome.terminal.update: false
 i3-wm.program.notifications: /usr/bin/dunst
 i3-wm.bar.status_command: ~/.config/regolith/bar.sh
 
 ! workspace names
 #define WORKSPACE_NAME(INDEX, FONT, COLOR, GLYPH)
-i3-wm.workspace.01.name: 1<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.02.name: 2<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.03.name: 3<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.04.name: 4<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.05.name: 5<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.06.name: 6<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.07.name: 7<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.08.name: 8<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.09.name: 9<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.10.name: 10<span font="Hack Nerd Font Mono 24"></span>
+i3-wm.workspace.01.name: 1<span font="Hack 24"></span>
+i3-wm.workspace.02.name: 2<span font="Hack 24"></span>
+i3-wm.workspace.03.name: 3<span font="Hack 24"></span>
+i3-wm.workspace.04.name: 4<span font="Hack 24"></span>
+i3-wm.workspace.05.name: 5<span font="Hack 24"></span>
+i3-wm.workspace.06.name: 6<span font="Hack 24"></span>
+i3-wm.workspace.07.name: 7<span font="Hack 24"></span>
+i3-wm.workspace.08.name: 8<span font="Hack 24"></span>
+i3-wm.workspace.09.name: 9<span font="Hack 24"></span>
+i3-wm.workspace.10.name: 10<span font="Hack 24"></span>
 
 ! bars
 i3-wm.bar.background.color: #1d1f21
@@ -38,10 +38,10 @@ i3-wm.bar.workspace.urgent.background.color: #1d1f21
 i3-wm.bar.workspace.urgent.text.color: #bb1111
 
 ! Sets i3 font for dialogs
-i3-wm.bar.font: pango:Hack Nerd Font Mono 10
+i3-wm.bar.font: pango:Hack 10
 !i3-wm.bar.font: pango:Material Design Icons 18, Hack Nerd Font Mono 16
 ! i3-wm.font i3-wm.font pango:Source Code Pro Medium 13
 
 
-i3-wm.font: pango:Hack Nerd Font Mono 16
+i3-wm.font: pango:Hack 16
 
