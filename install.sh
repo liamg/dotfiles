@@ -19,9 +19,6 @@ install nvim neovim
 install rg ripgrep
 install flameshot
 
-echo "Loading gnome terminal settings..."
-dconf load /org/gnome/terminal/ < gnome.term
-
 echo "Checking vim-plug is installed..."
 target="${XDG_DATA_HOME:-$HOME/.config}"/nvim/autoload/
 mkdir -p $target
@@ -84,7 +81,12 @@ install_hack () {
 	cp fonts/* $FONTDIR/
 	fc-cache -f >/dev/null
 }
-fc-list | grep 'Hack Nerd Font Complete Mono:s' >/dev/null || install_hack
+fc-list | grep 'Hack Nerd Font Mono:s' >/dev/null || install_hack
+
+# set terminal style AFTER font is installed
+echo "Loading gnome terminal settings..."
+dconf load /org/gnome/terminal/ < gnome.term
+
 
 # restart i3 with new settings
 echo "Restarting i3 with new configuration..."
