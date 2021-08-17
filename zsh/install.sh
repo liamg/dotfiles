@@ -28,14 +28,14 @@ install_theme() {
 	log_info ohmyzsh "Installing theme '$1'..."
     name=$1
     repo=$2
-    git clone "$repo" "$CUSTOMDIR/themes/$name"
+    git clone "$repo" "$CUSTOMDIR/themes/$name" >/dev/null 2>&1
 }
 
 install_plugin() {
 	log_info ohmyzsh "Installing plugin '$1'..."
     name=$1
     repo=$2
-    git clone "$repo" "$CUSTOMDIR/plugins/$name"
+    git clone "$repo" "$CUSTOMDIR/plugins/$name" >/dev/null 2>&1
 }
 
 check_theme_installed() {
@@ -55,6 +55,7 @@ check_plugin_installed() {
 }
 
 check_theme_installed powerlevel10k https://github.com/romkatv/powerlevel10k
+check_plugin_installed you-should-use https://github.com/MichaelAquilina/zsh-you-should-use
 
 log_info ohmyzsh "Adding zsh configuration..."
 ln -fs `pwd`/zsh/p10k.zsh "$CUSTOMDIR/p10k.zsh"
