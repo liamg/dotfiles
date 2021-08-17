@@ -4,7 +4,7 @@
 
 
 nnoremap <C-q> :qall<CR>
-vnoremap <C-q> <Esc>:q<CR>
+vnoremap <C-q> <Esc>:qall<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
