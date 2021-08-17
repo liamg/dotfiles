@@ -1,3 +1,7 @@
 
 # flameshot key binding
 bindsym --release Print exec "flameshot gui"
+
+# disable borders
+for_window [class="^.*"] border pixel 0
+
