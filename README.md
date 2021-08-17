@@ -1,4 +1,4 @@
-# Dotfiles
+# Personal Dotfiles
 
 ## Requirements
 
