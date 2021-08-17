@@ -11,13 +11,14 @@ log_info zsh "Checking default shell is zsh..."
 zshpath=$(which zsh)
 if [[ ! "$zshpath" = "$SHELL" ]]; then
 	log_info zsh "Changing default shell..."
-	chsh -s $zshpath 
+	chsh -s $zshpath
+	log_warning zsh "You need to reboot/relog for your new default shell to take effect."
 fi
 log_success zsh "Default shell is zsh!"
 
 install_ohmyzsh() {
     log_info ohmyzsh "Installing..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended >/dev/null
 }
 
 log_info ohmyzsh "Checking installation..."

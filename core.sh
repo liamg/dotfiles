@@ -14,7 +14,7 @@ XDG_CONFIG_HOME="${HOME}/.config"
 install_package () {
 	log_info packages "Installing $1..."
     sudo apt update >/dev/null 2>&1
-    sudo apt install -y "$1" >/dev/null 2>&1
+    sudo apt install -o Dpkg::Options::="--force-overwrite" -y "$1" >/dev/null 2>&1
 }
 
 check_package_installed () {

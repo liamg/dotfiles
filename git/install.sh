@@ -8,4 +8,5 @@ cp git/config $HOME/.gitconfig
 log_info git "Installing ignore rules..."
 ln -sf `pwd`/git/ignore $HOME/.gitignore
 
-[[ -f git/custom.sh ]] && log_info git "Adding custom config..." && source git/custom.sh
+([[ -f git/custom.sh ]] && log_info git "Adding custom config..." && source git/custom.sh) || true
+
