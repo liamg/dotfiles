@@ -8,8 +8,13 @@ help:
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' | sed -e 's/^/-/'
 
 .PHONY: install
-install: packages hack xresources-install i3-install gnome-terminal bumblebee-status zsh git neovim wallpaper i3-restart
+install: packages hack xresources-install i3-install gnome-terminal bumblebee-status zsh git go neovim wallpaper i3-restart
 ## install: Install/configure everything. Should be idempotent.
+
+.PHONY: go
+go:
+## go: install a specific version of Go (see go/install.sh)
+	@./go/install.sh
 
 .PHONY: i3-install
 i3-install:
