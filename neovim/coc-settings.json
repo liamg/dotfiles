@@ -5,6 +5,8 @@
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     }
-  }
+  },
+  "suggest.noselect": false,
+  "suggest.enablePreselect": true
 }
 

@@ -40,6 +40,13 @@ log_success neovim "Yarn is installed!"
 log_info neovim   "Configuring neovim..."
 mkdir -p $HOME/.config/nvim/
 ln -sf `pwd`/neovim/init.vim $XDG_CONFIG_HOME/nvim/init.vim
+ln -sf `pwd`/neovim/mappings.vim $XDG_CONFIG_HOME/nvim/mappings.vim
+ln -sf `pwd`/neovim/plugins.vim $XDG_CONFIG_HOME/nvim/plugins.vim
+ln -sf `pwd`/neovim/colours.vim $XDG_CONFIG_HOME/nvim/colours.vim
+ln -sf `pwd`/neovim/tree.vim $XDG_CONFIG_HOME/nvim/tree.vim
+ln -sf `pwd`/neovim/coc.vim $XDG_CONFIG_HOME/nvim/coc.vim
+ln -sf `pwd`/neovim/vim-go.vim $XDG_CONFIG_HOME/nvim/vim-go.vim
+ln -sf `pwd`/neovim/startify.vim $XDG_CONFIG_HOME/nvim/startify.vim
 ln -sf `pwd`/neovim/coc-settings.json $XDG_CONFIG_HOME/nvim/coc-settings.json
 
 log_info neovim   "Installing plugins..."
