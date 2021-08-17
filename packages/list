@@ -1,0 +1,15 @@
+bat
+build-essential
+cmake
+curl
+flameshot
+git
+htop
+jq
+python3-dev
+python3-pip
+ripgrep rg
+tree
+unzip
+wget
+xclip

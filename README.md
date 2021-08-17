@@ -1,5 +1,11 @@
 # My Dotfiles for Regolith
 
+Run `make` to install everything.
+
+## Requirements
+
+Ubuntu + Regolith.
+
 ## Neovim Bindings
 
 | Keys             | Shortcut |

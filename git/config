@@ -1,0 +1,10 @@
+[user]
+	name = Liam Galvin
+	email = liamgalvin@protonmail.com
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim
+    excludesFile = ~/.gitignore
+[pull]
+	rebase = true

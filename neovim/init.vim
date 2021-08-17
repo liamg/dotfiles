@@ -1,31 +1,17 @@
 " -------------------------------------------------------------------------------------------------
-" behaviour
-" -------------------------------------------------------------------------------------------------
-" close nvim if the only window open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" open nerdtree if specifying a directory in argv[0]
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | wincmd h | endif
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'cd '.argv()[0] | wincmd h | endif
-
-
 " Plugins
+" -------------------------------------------------------------------------------------------------
 
 call plug#begin('~/.vim/plugged')
-
-" < Other Plugins, if they exist >
-
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
 call plug#end()
-
-
 
 " -------------------------------------------------------------------------------------------------
 " coc.nvim default settings
@@ -102,6 +88,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
 
+" -------------------------------------------------------------------------------------------------
 " colour scheme
 " -------------------------------------------------------------------------------------------------
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -137,30 +124,54 @@ syntax on
 colorscheme onedark
 unlet g:terminal_ansi_colors
 
+" -------------------------------------------------------------------------------------------------
+" nvim-tree settings
+" -------------------------------------------------------------------------------------------------
+let g:nvim_tree_width = 30 "30 by default, can be width_in_columns or 'width_in_percent%'
+let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
+let g:nvim_tree_gitignore = 1 "0 by default
+let g:nvim_tree_auto_open = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
+let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last window
+let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ] "empty by default, don't auto open tree on specific filetypes.
+let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
+let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
+let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
+let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
+let g:nvim_tree_lsp_diagnostics = 1 "0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
+let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
+
+set termguicolors " this variable must be enabled for colors to be applied properly
+
+" a list of groups can be found at `:help nvim_tree_highlight`
+highlight NvimTreeFolderIcon guibg=blue
+
+" -------------------------------------------------------------------------------------------------
 " Custom stuff
+" -------------------------------------------------------------------------------------------------
 
 set number
 set tabstop=4
 set shiftwidth=4
 set fcs=eob:\ 
 
-let NERDTreeAutoDeleteBuffer = 1
-
 let g:go_auto_type_info = 0
 let g:go_auto_sameids = 1
 
 " -------------------------------------------------------------------------------------------------
-" shortcuts
+" Key Bindings
 " -------------------------------------------------------------------------------------------------
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <C-n> :NvimTreeToggle<CR>
+nnoremap <silent> <leader>r :NvimTreeRefresh<CR>
 nnoremap <silent> <C-f> :Files<CR>
-nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
-nnoremap <silent> <Leader>t <C-w>n:te<CR>i
-nnoremap <silent> <leader>, :GoDebugStart<CR>
+nnoremap <silent> <leader>t <C-w>n:te<CR>i
+nnoremap <silent> <leader>, :GoDebugStart ./cmd/
 nnoremap <silent> <leader>. :GoDebugStop<CR>
 nnoremap <silent> <leader>b :GoDebugBreakpoint<CR>
-nnoremap <silent> <leader>n :GoDebugContinue<CR>
+nnoremap <silent> <leader>n :GoDebugStep<CR>
+nnoremap <silent> <leader>m :GoDebugContinue<CR>
+
 
 " go debug layout
 let g:go_debug_windows = {
