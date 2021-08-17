@@ -11,6 +11,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " -------------------------------------------------------------------------------------------------
@@ -130,7 +131,7 @@ unlet g:terminal_ansi_colors
 let g:nvim_tree_width = 30 "30 by default, can be width_in_columns or 'width_in_percent%'
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
 let g:nvim_tree_gitignore = 1 "0 by default
-let g:nvim_tree_auto_open = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
+let g:nvim_tree_auto_open = 0 "0 by default, opens the tree when typing `vim $DIR` or `vim`
 let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last window
 let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ] "empty by default, don't auto open tree on specific filetypes.
 let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
@@ -145,6 +146,8 @@ set termguicolors " this variable must be enabled for colors to be applied prope
 " a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guibg=blue
 
+
+
 " -------------------------------------------------------------------------------------------------
 " Custom stuff
 " -------------------------------------------------------------------------------------------------
@@ -154,8 +157,19 @@ set tabstop=4
 set shiftwidth=4
 set fcs=eob:\ 
 
+" fix for gopls crashing
 let g:go_auto_type_info = 0
+
+" highlight same variable across buffer
 let g:go_auto_sameids = 1
+
+" startify tweaks
+" save loaded session on exit
+let g:startify_session_persistence = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_fortune_use_unicode = 1
+let g:startify_relative_path = 1
+let g:startify_files_number = 5
 
 " -------------------------------------------------------------------------------------------------
 " Key Bindings
@@ -171,7 +185,6 @@ nnoremap <silent> <leader>. :GoDebugStop<CR>
 nnoremap <silent> <leader>b :GoDebugBreakpoint<CR>
 nnoremap <silent> <leader>n :GoDebugStep<CR>
 nnoremap <silent> <leader>m :GoDebugContinue<CR>
-
 
 " go debug layout
 let g:go_debug_windows = {
