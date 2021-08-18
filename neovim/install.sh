@@ -48,8 +48,10 @@ ln -sf `pwd`/neovim/coc.vim $XDG_CONFIG_HOME/nvim/coc.vim
 ln -sf `pwd`/neovim/vim-go.vim $XDG_CONFIG_HOME/nvim/vim-go.vim
 ln -sf `pwd`/neovim/startify.vim $XDG_CONFIG_HOME/nvim/startify.vim
 ln -sf `pwd`/neovim/coc-settings.json $XDG_CONFIG_HOME/nvim/coc-settings.json
+ln -sf `pwd`/neovim/snippets.vim $XDG_CONFIG_HOME/nvim/snippets.vim
 
 log_info neovim   "Installing plugins..."
 nvim +PlugInstall +qall
 nvim +GoInstallBinaries +qall
+nvim +"CocInstall coc-go" +qall
 log_success neovim "Plugins installed!"

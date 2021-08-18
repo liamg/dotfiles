@@ -13,4 +13,6 @@ source ~/.config/nvim/coc.vim
 source ~/.config/nvim/startify.vim
 source ~/.config/nvim/tree.vim
 source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/snippets.vim
+
 

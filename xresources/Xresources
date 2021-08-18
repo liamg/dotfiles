@@ -1,4 +1,5 @@
-i3-wm.gaps.inner.size: 0
+i3-wm.bar.position: bottom
+i3-wm.gaps.inner.size: 24
 gnome.wallpaper: ~/active-wallpaper
 gnome.terminal.font: Hack Nerd Font Mono 14
 gnome.terminal.update: false
@@ -19,25 +20,30 @@ i3-wm.workspace.09.name: 9<span font="Hack Nerd Font Mono 24"></span>
 i3-wm.workspace.10.name: 10<span font="Hack Nerd Font Mono 24"></span>
 
 ! bars
-i3-wm.bar.background.color: #1d1f21
+i3-wm.bar.background.color: #0f0f0f
 
-i3-wm.bar.workspace.focused.border.color: #1d1f21
-i3-wm.bar.workspace.focused.background.color: #1d1f21
+i3-wm.bar.workspace.focused.border.color: #0f0f0f
+i3-wm.bar.workspace.focused.background.color: #0f0f0f
 i3-wm.bar.workspace.focused.text.color: #ffffff
 
-i3-wm.bar.workspace.active.border.color: #1d1f21
-i3-wm.bar.workspace.active.background.color: #1d1f21
+i3-wm.bar.workspace.active.border.color: #0f0f0f
+i3-wm.bar.workspace.active.background.color: #0f0f0f
 i3-wm.bar.workspace.active.text.color: #aaaaaa
 
-i3-wm.bar.workspace.inactive.border.color: #1d1f21
-i3-wm.bar.workspace.inactive.background.color: #1d1f21
+i3-wm.bar.workspace.inactive.border.color: #0f0f0f
+i3-wm.bar.workspace.inactive.background.color: #0f0f0f
 i3-wm.bar.workspace.inactive.text.color: #aaaaaa
 
-i3-wm.bar.workspace.urgent.border.color: #1d1f21
-i3-wm.bar.workspace.urgent.background.color: #1d1f21
-i3-wm.bar.workspace.urgent.text.color: #bb1111
+i3-wm.bar.workspace.urgent.border.color: #0f0f0f
+i3-wm.bar.workspace.urgent.background.color: #0f0f0f
+i3-wm.bar.workspace.urgent.text.color: #aaff88
 
-! Sets i3 font for dialogs
-i3-wm.bar.font: pango: Hack Nerd Font Mono 10
+i3-wm.bar.trayoutput: none
+i3-wm.bar.height: 32
+
+! fonts
+i3-wm.bar.font: pango:Hack Nerd Font Mono 10
 i3-wm.font: pango:Hack Nerd Font Mono 16
+
+i3-wm.bar.stripworkspacenumbers: yes
 
