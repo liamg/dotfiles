@@ -1,1 +1,2 @@
-Add `custom.png` to override default wallpaper.
+Add `wallpaper.png` (or `.jpg`) to override default wallpaper.
+
