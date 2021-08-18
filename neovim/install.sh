@@ -54,4 +54,5 @@ log_info neovim   "Installing plugins..."
 nvim +PlugInstall +qall
 nvim +GoInstallBinaries +qall
 nvim +"CocInstall coc-go" +qall
+nvim +"CocInstall coc-snippets" +qall
 log_success neovim "Plugins installed!"
