@@ -14,7 +14,7 @@ Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 
