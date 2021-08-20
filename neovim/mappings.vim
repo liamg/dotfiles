@@ -54,3 +54,11 @@ nnoremap <silent> <C-b> :Buffers<CR>
 " Terminal
 nnoremap <silent> <leader>t <C-w>n:te<CR>i
 
+nnoremap <leader>q :GoDebugTest<CR>
+nnoremap <leader>w :GoDebugContinue<CR>
+nnoremap <leader>e :GoDebugStep<CR>
+nnoremap <leader>y :GoDebugNext<CR>
+nnoremap <leader>b :GoDebugBreakpoint<CR>
+
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+

@@ -1,8 +1,14 @@
 
-set number
+set number! relativenumber!
 set tabstop=4
 set shiftwidth=4
 set fcs=eob:\ 
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
 
 filetype plugin on
 
@@ -14,5 +20,4 @@ source ~/.config/nvim/startify.vim
 source ~/.config/nvim/tree.vim
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/snippets.vim
-
 
