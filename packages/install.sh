@@ -8,3 +8,5 @@ do
   check_package_installed $line
 done < packages/list
 
+which spt >/dev/null 2>&1 || snap install spt 2>/dev/null
+
