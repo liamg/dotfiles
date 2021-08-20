@@ -9,7 +9,7 @@ let g:go_def_mapping_enabled = 0
 let g:go_auto_type_info = 0
 
 " highlight same variable across buffer
-let g:go_auto_sameids = 1
+let g:go_auto_sameids = 0
 
 " go debug layout
 let g:go_debug_windows = {
