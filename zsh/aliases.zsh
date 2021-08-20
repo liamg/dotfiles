@@ -5,7 +5,7 @@ __custom__load_session () {
 }
 
 __custom__create_session () {
-	nvim . +"SSave! $1"
+	nvim . +"SSave $1"
 }
 
 e () {
