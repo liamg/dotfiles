@@ -75,7 +75,10 @@ git:
 	@./git/install.sh
 
 .PHONY: wallpaper
-wallpaper:
+wallpaper: install-wallpaper i3-restart
+
+.PHONY: install-wallpaper
+install-wallpaper:
 ## wallpaper: Sets wallpaper. Override default with wallpaper/custom.png
 	@./wallpaper/install.sh
 
