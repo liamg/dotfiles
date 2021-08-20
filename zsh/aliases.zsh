@@ -15,3 +15,5 @@ e () {
 	__custom__create_session $session
 }
 
+alias bat=batcat
+
