@@ -4,7 +4,7 @@ set -e
 source ./core.sh
 
 install_ncspot() {
-[[ -d /tmp/ncspot ]] && rm -rf tmp/ncspot
+[[ -d /tmp/ncspot ]] && rm -rf /tmp/ncspot
 git clone https://github.com/hrkfdn/ncspot.git /tmp/ncspot
 pushd /tmp/ncspot
 cargo build --release
