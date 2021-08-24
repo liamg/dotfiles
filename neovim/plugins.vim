@@ -15,8 +15,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'hashivim/vim-terraform'
-Plug 'zivyangll/git-blame.vim'
 Plug 'puremourning/vimspector'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
