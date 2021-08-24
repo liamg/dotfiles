@@ -1,3 +1,7 @@
+use_nerdfont = true
+flip_status_indicators = true
+notify = true
+
 [theme]
 background = "black"
 primary = "light white"

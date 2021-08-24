@@ -15,6 +15,8 @@ e () {
 	__custom__create_session $session
 }
 
-alias bat=batcat
+# fix for bat alias where needed
+which bat >/dev/null 2>&1 || alias bat="batcat"
+
 alias spotify="ncspot"
 

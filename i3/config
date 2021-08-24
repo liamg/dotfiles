@@ -681,5 +681,7 @@ exec --no-startup-id $i3-wm.program.3
 bindsym --release Print exec "flameshot gui"
 
 # disable borders
-for_window [class="^.*"] border pixel 0
+#for_window [class="^.*"] border pixel 0
+
+for_window [class="zoom"] floating enable
 

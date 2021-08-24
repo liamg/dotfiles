@@ -1,6 +1,6 @@
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin"
 export EDITOR=nvim
 
-export GOPRIVATE=github.com/aquasecurity
+export GOPRIVATE=github.com/aquasecurity/*,bitbucket.org/scalock/*
 export GOSUMDB=off
 

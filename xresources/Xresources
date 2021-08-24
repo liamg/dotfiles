@@ -12,12 +12,13 @@ i3-wm.workspace.01.name: 1<span font="Hack Nerd Font Mono 24"></span>
 i3-wm.workspace.02.name: 2<span font="Hack Nerd Font Mono 24"></span>
 i3-wm.workspace.03.name: 3<span font="Hack Nerd Font Mono 24"></span>
 i3-wm.workspace.04.name: 4<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.05.name: 5<span font="Hack Nerd Font Mono 24"></span>
+i3-wm.workspace.05.name: 5<span font="Hack Nerd Font Mono 24"></span>
+i3-wm.workspace.06.name: 6<span font="Hack Nerd Font Mono 24"></span>
 i3-wm.workspace.06.name: 6<span font="Hack Nerd Font Mono 24"></span>
 i3-wm.workspace.07.name: 7<span font="Hack Nerd Font Mono 24"></span>
 i3-wm.workspace.08.name: 8<span font="Hack Nerd Font Mono 24"></span>
 i3-wm.workspace.09.name: 9<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.10.name: 10<span font="Hack Nerd Font Mono 24"></span>
+i3-wm.workspace.10.name: 10<span font="Hack Nerd Font Mono 24"></span>
 
 ! bars
 i3-wm.bar.background.color: #0f0f0f
@@ -40,6 +41,9 @@ i3-wm.bar.workspace.urgent.text.color: #aaff88
 
 i3-wm.bar.trayoutput: none
 i3-wm.bar.height: 32
+
+! border
+i3-wm.client.focused.color.child_border: #003300
 
 ! fonts
 i3-wm.bar.font: pango:Hack Nerd Font Mono 10
