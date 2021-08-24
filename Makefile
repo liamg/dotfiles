@@ -8,7 +8,7 @@ help:
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' | sed -e 's/^/-/'
 
 .PHONY: install
-install: packages hack xresources-install i3-install gnome-terminal bumblebee-status zsh git go neovim wallpaper i3-restart
+install: packages hack xresources-install i3-install gnome-terminal bumblebee-status zsh git go neovim wallpaper i3-restart ncspot
 ## install: Install/configure everything. Should be idempotent.
 
 .PHONY: go
@@ -82,3 +82,7 @@ install-wallpaper:
 ## wallpaper: Sets wallpaper. Override default with wallpaper/custom.png
 	@./wallpaper/install.sh
 
+.PHONY: ncspot
+ncspot:
+## ncspot
+	@./ncspot/install.sh
