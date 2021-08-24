@@ -16,4 +16,4 @@ e () {
 }
 
 alias bat=batcat
-
+alias spotify="spotifyd && spt"

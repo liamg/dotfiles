@@ -60,5 +60,7 @@ nnoremap <leader>e :GoDebugStep<CR>
 nnoremap <leader>y :GoDebugNext<CR>
 nnoremap <leader>b :GoDebugBreakpoint<CR>
 
+nnoremap <leader>vt :call DebugCurrentTest()<CR>
+
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 

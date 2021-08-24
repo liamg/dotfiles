@@ -1,7 +1,7 @@
 " -------------------------------------------------------------------------------------------------
 " nvim-tree settings
 " -------------------------------------------------------------------------------------------------
-let g:nvim_tree_width = 30 "30 by default, can be width_in_columns or 'width_in_percent%'
+let g:nvim_tree_width = 60 "30 by default, can be width_in_columns or 'width_in_percent%'
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
 let g:nvim_tree_gitignore = 1 "0 by default
 let g:nvim_tree_auto_open = 0 "0 by default, opens the tree when typing `vim $DIR` or `vim`

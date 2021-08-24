@@ -5,6 +5,10 @@
 	gpgsign = true
 [core]
 	editor = nvim
-    excludesFile = ~/.gitignore
+[ignore]
+    file = ~/.gitignore
 [pull]
 	rebase = true
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
