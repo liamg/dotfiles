@@ -23,5 +23,6 @@ source ~/.config/nvim/functions.vim
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/snippets.vim
 source ~/.config/nvim/vimspector.vim
+source ~/.config/nvim/hacks.vim
 
 

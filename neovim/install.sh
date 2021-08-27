@@ -51,6 +51,7 @@ ln -sf `pwd`/neovim/coc-settings.json $XDG_CONFIG_HOME/nvim/coc-settings.json
 ln -sf `pwd`/neovim/vimspector.vim $XDG_CONFIG_HOME/nvim/vimspector.vim
 ln -sf `pwd`/neovim/snippets.vim $XDG_CONFIG_HOME/nvim/snippets.vim
 ln -sf `pwd`/neovim/functions.vim $XDG_CONFIG_HOME/nvim/functions.vim
+ln -sf `pwd`/neovim/hacks.vim $XDG_CONFIG_HOME/nvim/hacks.vim
 
 log_info neovim   "Installing plugins..."
 nvim +PlugInstall +qall

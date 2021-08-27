@@ -684,4 +684,5 @@ bindsym --release Print exec "flameshot gui"
 #for_window [class="^.*"] border pixel 0
 
 for_window [class="zoom"] floating enable
+for_window [class="microsoft teams - preview"] floating enable
 

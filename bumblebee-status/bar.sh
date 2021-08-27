@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ~/.config/regolith/bumblebee-status/bumblebee-status -m \
-    todo spacer spotify spacer nic publicip disk:root cpu memory battery spacer date time \
+    todo spacer spacer nic publicip disk:root cpu memory battery spacer date time \
     -p \
     todo.file=~/.rofi_todos \
     root.path=/ \

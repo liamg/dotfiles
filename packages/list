@@ -3,6 +3,7 @@ build-essential
 cargo
 cmake
 curl
+fd-find
 flameshot
 git
 htop

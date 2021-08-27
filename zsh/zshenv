@@ -4,3 +4,5 @@ export EDITOR=nvim
 export GOPRIVATE=github.com/aquasecurity/*,bitbucket.org/scalock/*
 export GOSUMDB=off
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude vendor'
+
