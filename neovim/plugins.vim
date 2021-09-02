@@ -17,6 +17,7 @@ Plug 'SirVer/ultisnips'
 Plug 'hashivim/vim-terraform'
 Plug 'puremourning/vimspector'
 Plug 'tpope/vim-fugitive'
+Plug 'aquasecurity/vim-tfsec'
 call plug#end()
 
 
