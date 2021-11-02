@@ -8,8 +8,18 @@ help:
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' | sed -e 's/^/-/'
 
 .PHONY: install
-install: packages hack xresources-install i3-install gnome-terminal bumblebee-status zsh git go neovim wallpaper i3-restart ncspot
+install: go packages rust hack xresources-install i3-install gnome-terminal eww bumblebee-status zsh git neovim wallpaper i3-restart ncspot
 ## install: Install/configure everything. Should be idempotent.
+
+.PHONY: eww
+eww:
+## eww: install eww for a custom bar/widgets (see eww/install.sh)
+	@./eww/install.sh
+
+.PHONY: rust
+rust:
+	## rust: install rust via rustup (see rust/install.sh)
+	@./rust/install.sh
 
 .PHONY: go
 go:

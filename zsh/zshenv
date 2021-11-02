@@ -6,3 +6,4 @@ export GOSUMDB=off
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude vendor'
 
+. "$HOME/.cargo/env"

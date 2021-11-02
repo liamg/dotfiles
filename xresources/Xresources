@@ -6,6 +6,9 @@ gnome.terminal.update: false
 i3-wm.program.notifications: /usr/bin/dunst
 i3-wm.bar.status_command: ~/.config/regolith/bar.sh
 
+! startup
+i3-wm.program.1: eww daemon
+
 ! workspace names
 #define WORKSPACE_NAME(INDEX, FONT, COLOR, GLYPH)
 i3-wm.workspace.01.name: 1<span font="Hack Nerd Font Mono 24"></span>
