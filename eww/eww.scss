@@ -36,11 +36,14 @@ window {
 
 .workspaces {
   font-family: "Hack Regular";
-  font-size: 12px;
+  font-size: 28px;
   margin-right: 20px;
 
   button {
     margin: 0px 3px;
+  }
+  button.active {
+    color: red;
   }
   .occupied {
     color: $grey;

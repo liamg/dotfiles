@@ -11,17 +11,16 @@ i3-wm.program.1: eww daemon
 
 ! workspace names
 #define WORKSPACE_NAME(INDEX, FONT, COLOR, GLYPH)
-i3-wm.workspace.01.name: 1<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.02.name: 2<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.03.name: 3<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.04.name: 4<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.05.name: 5<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.06.name: 6<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.06.name: 6<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.07.name: 7<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.08.name: 8<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.09.name: 9<span font="Hack Nerd Font Mono 24"></span>
-i3-wm.workspace.10.name: 10<span font="Hack Nerd Font Mono 24"></span>
+i3-wm.workspace.01.name: 1
+i3-wm.workspace.02.name: 2
+i3-wm.workspace.03.name: 3
+i3-wm.workspace.04.name: 4
+i3-wm.workspace.05.name: 5
+i3-wm.workspace.06.name: 6
+i3-wm.workspace.07.name: 7
+i3-wm.workspace.08.name: 8
+i3-wm.workspace.09.name: 9
+i3-wm.workspace.10.name: 0
 
 ! bars
 i3-wm.bar.background.color: #0f0f0f

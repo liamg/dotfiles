@@ -21,6 +21,7 @@ libxcb1-dev
 libxcb-render0-dev
 libxcb-shape0-dev
 libxcb-xfixes0-dev
+nodejs
 pkg-config
 playerctl
 python3-dev

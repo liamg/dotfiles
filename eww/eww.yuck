@@ -1,4 +1,4 @@
-; bar window
+; windows
 (defwindow bar
   :monitor 0
   :hexpand false
@@ -8,29 +8,29 @@
   :reserve (struts :distance "10px" :side "top")
   (bar :screen 0))
 
-; bar widget
 (defwidget bar [screen]
   (box :orientation "h"
        :space-evenly false
        :class "bar"
     (box :halign "start"
          :space-evenly false
-      (workspaces)
+      (workspaces :screen "${screen}")
       (player))
     (box :halign "end"
          :spacing 12
          :hexpand true
          :space-evenly false
-      (microphone)
-      (speaker)
-      (ping)
-      (network)
-      (disk)
-      (ram)
-      (nvidia)
-      (cpu)
-      (date)
-      (time))))
+      ;(microphone)
+      ;(speaker)
+      ;(ping)
+      ;(network)
+      ;(disk)
+      ;(ram)
+      ;(nvidia)
+      ;(cpu)
+      ;(date)
+      ;(time)
+  )))
 
 
 ; vars
@@ -38,7 +38,8 @@
 (defpoll date_poll :interval "1m" "date +%d/%m/%Y")
 (defpoll ping_poll :interval "10s" "./modules/ping.sh")
 
-(deflisten workspaces_listen "./modules/workspaces.sh")
+(deflisten workspaces_screen_0_listen "./scripts/workspaces.sh 0")
+(deflisten workspaces_screen_1_listen "./scripts/workspaces.sh 1")
 (deflisten player_listen :initial '{"show": "no", "content": ""}' "./modules/player.sh")
 (deflisten nvidia_listen "./modules/nvidia.sh")
 
@@ -54,11 +55,9 @@
        :visible {visible ?: true} ; because the argument is optional
     (label :class "icon-module__icon" :text "${icon}")
     (children)))
-; foldend
 
-; Polybar-Style modules foldstart
-(defwidget workspaces []
-  (literal :content workspaces_listen))
+(defwidget workspaces [screen]
+  (literal :class "workspaces" :content "${screen == 0 ? workspaces_screen_0_listen : workspaces_screen_1_listen}"))
 
 (defwidget player []
   (icon-module :class "player" :icon "" :visible {player_listen.show == "yes"}
@@ -96,18 +95,18 @@
   (icon-module :class "network" :icon ""
     (label :text "${round(EWW_NET.enp42s0.NET_UP / 1000000, 2)}/${round(EWW_NET.enp42s0.NET_DOWN / 1000000, 2)}"))) 
 
-(defwidget speaker []
-  (icon-module :class "speaker" 
-               :icon {speaker_poll.icon}
-    (eventbox :onscroll `eww update speaker_poll="$(./modules/speaker.sh {})"`
-      (button :onclick `eww update speaker_poll="$(./modules/speaker.sh toogle)"`
-        (label :text {speaker_poll.content})))))
+;(defwidget speaker []
+;  (icon-module :class "speaker"
+;               :icon {speaker_poll.icon}
+;    (eventbox :onscroll `eww update speaker_poll="$(./modules/speaker.sh {})"`
+;      (button :onclick `eww update speaker_poll="$(./modules/speaker.sh toogle)"`
+;        (label :text {speaker_poll.content})))))
 
-(defwidget microphone []
-  (icon-module :class "microphone" 
-               :icon {microphone_poll.icon}
-    (eventbox :onscroll `eww update microphone_poll="$(./modules/microphone.sh {})"`
-      (button :onclick `eww update microphone_poll="$(./modules/microphone.sh toogle)"`
-        (label :text {microphone_poll.content})))))
+;(defwidget microphone []
+;  (icon-module :class "microphone"
+;               :icon {microphone_poll.icon}
+;    (eventbox :onscroll `eww update microphone_poll="$(./modules/microphone.sh {})"`
+;      (button :onclick `eww update microphone_poll="$(./modules/microphone.sh toogle)"`
+;        (label :text {microphone_poll.content})))))
 
 
