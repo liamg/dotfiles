@@ -60,7 +60,7 @@
   (literal :class "workspaces" :content "${screen == 0 ? workspaces_screen_0_listen : workspaces_screen_1_listen}"))
 
 (defwidget player []
-  (icon-module :class "player" :icon ""
+  (icon-module :class "player" :icon "" :visible { player_listen != "" }
     (label :text {player_listen})))
 
 (defwidget ram []
