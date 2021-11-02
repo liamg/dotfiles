@@ -28,19 +28,19 @@
       ;(ram)
       ;(nvidia)
       ;(cpu)
-      ;(date)
-      ;(time)
+      (date)
+      (time)
   )))
 
 
 ; vars
-(defpoll time_poll :interval "1s" "date +%H:%M")
-(defpoll date_poll :interval "1m" "date +%d/%m/%Y")
+(defpoll time_poll :interval "1s" "date +%H:%M:%S")
+(defpoll date_poll :interval "1m" "date +%Y-%m-%d")
 (defpoll ping_poll :interval "10s" "./modules/ping.sh")
 
-(deflisten workspaces_screen_0_listen "./scripts/workspaces.sh 0")
-(deflisten workspaces_screen_1_listen "./scripts/workspaces.sh 1")
-(deflisten player_listen :initial '{"show": "no", "content": ""}' "./modules/player.sh")
+(deflisten workspaces_screen_0_listen "./bin/workspaces 0")
+(deflisten workspaces_screen_1_listen "./bin/workspaces 1")
+(deflisten player_listen "./scripts/player.sh")
 (deflisten nvidia_listen "./modules/nvidia.sh")
 
 (deflisten volume_in_listen "./scripts/volume_in.sh")
@@ -60,8 +60,8 @@
   (literal :class "workspaces" :content "${screen == 0 ? workspaces_screen_0_listen : workspaces_screen_1_listen}"))
 
 (defwidget player []
-  (icon-module :class "player" :icon "" :visible {player_listen.show == "yes"}
-    (literal :content {player_listen.content})))
+  (icon-module :class "player" :icon ""
+    (label :text {player_listen})))
 
 (defwidget ram []
   (icon-module :class "ram" :icon "" :visible {EWW_RAM.used_mem_perc != ""}

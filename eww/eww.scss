@@ -40,27 +40,14 @@ window {
   margin-right: 20px;
 
   button {
+	color: #888888;
     margin: 0px 3px;
   }
-  button.active {
-    color: red;
+  button.focused {
+    color: #ffffff;
   }
-  .occupied {
-    color: $grey;
-  }
-
-  .focused {
-    color: $white;
-  }
-
-  .urgent {
-    color: $red; 
-  }
-
-  .empty {
-    padding-top: 2px;
-    color: $foreground-alt;
-    font-size: 10px;
+  button.urgent {
+	color: red;
   }
 
 }
