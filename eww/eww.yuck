@@ -10,12 +10,13 @@
 
 (defwidget bar [screen]
   (centerbox :orientation "h"
-       :space-evenly false
        :class "bar"
     (box :halign "start"
          :space-evenly false
       (workspaces :screen "${screen}")
-      (player))
+     
+	 (player)
+	  )
     (box :halign "center"
         :spacing 12
          :space-evenly false
@@ -31,14 +32,14 @@
 
 ; vars
 (defpoll time_poll :interval "1s" "date +%H:%M:%S")
-(defpoll date_poll :interval "1m" "date +%Y-%m-%d")
+(defpoll date_poll :interval "1m" "date +'%A %-d %B'")
 (defpoll weather :interval "1h" "./bin/weather Southampton,UK")
 (defpoll interface_poll :interval "1m" "./scripts/interface.sh")
 
 (deflisten workspaces_screen_primary_listen "./bin/workspaces primary")
-(deflisten player_listen "./scripts/player.sh")
-(deflisten player_status_listen "playerctl status -F")
-(deflisten player_progress_listen "playerctl metadata --format "{{duration(position)}}/{{duration(mpris:length)}}" -F")
+(deflisten player_current "./scripts/player.sh")
+(deflisten player_status "playerctl status -F")
+(deflisten player_progress "./scripts/progress.sh")
 
 
 ; widgets
@@ -54,6 +55,7 @@
 (defwidget recess [?class ?visible]
     (box :class "${class} recess"
          :orientation "h"
+		 :spacing 10
          :halign "center"
          :space-evenly false
          :visible {visible ?: true}
@@ -75,8 +77,7 @@
            :min 0
            :max 100
            :active true
-           :value input
-           :onchange onchange))
+           :value input))
           )
 
 (defwidget system []
@@ -96,29 +97,28 @@
   (literal :class "workspaces" :content workspaces_screen_primary_listen)))
 
 (defwidget player []
-    (recess :class "recess-highlight" :visible { player_listen != "" }
-  (icon-module :class "player" :icon ""
-    (label :text player_listen)
+	(recess :class "player" :visible {player_current != ""}
+    (label :class "current" :text player_current)
     (button
         :onclick "playerctl previous"
-        (label :text "丹")
+        (label :text "")
     )
     (button
-            :visible {player_status_listen == "Paused" }
+            :visible {player_status == "Paused" }
             :onclick "playerctl play"
             (label :text "")
     )
     (button
-            :visible {player_status_listen == "Playing" }
+            :visible {player_status == "Playing" }
             :onclick "playerctl pause"
-            (label :text "")
+            (label :text "")
     )
     (button
             :onclick "playerctl next"
-            (label :text "")
+            (label :text "")
     )
-     (label :text player_progress_listen)
-    )))
+     (label :text player_progress)
+    ))
 
 (defwidget date []
   (icon-module :class "date" :icon "" 
@@ -144,6 +144,6 @@
  )
 
 (defwidget weather []  (icon-module :class "network" :icon "${weather.icon}"
-                          (label :text "${weather.description}")
+                          (label :text "${weather.temperature}")
                           ))
 

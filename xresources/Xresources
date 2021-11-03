@@ -1,13 +1,12 @@
-i3-wm.bar.position: bottom
 i3-wm.gaps.inner.size: 24
 gnome.wallpaper: ~/active-wallpaper
 gnome.terminal.font: Hack Nerd Font Mono 14
 gnome.terminal.update: false
 i3-wm.program.notifications: /usr/bin/dunst
-i3-wm.bar.status_command: ~/.config/regolith/bar.sh
 
 ! startup
 i3-wm.program.1: eww daemon
+i3-wm.program.2: sh -c 'sleep 1 && eww open bar'
 
 ! workspace names
 #define WORKSPACE_NAME(INDEX, FONT, COLOR, GLYPH)
@@ -22,34 +21,10 @@ i3-wm.workspace.08.name: 8
 i3-wm.workspace.09.name: 9
 i3-wm.workspace.10.name: 0
 
-! bars
-i3-wm.bar.background.color: #0f0f0f
-
-i3-wm.bar.workspace.focused.border.color: #0f0f0f
-i3-wm.bar.workspace.focused.background.color: #0f0f0f
-i3-wm.bar.workspace.focused.text.color: #ffffff
-
-i3-wm.bar.workspace.active.border.color: #0f0f0f
-i3-wm.bar.workspace.active.background.color: #0f0f0f
-i3-wm.bar.workspace.active.text.color: #aaaaaa
-
-i3-wm.bar.workspace.inactive.border.color: #0f0f0f
-i3-wm.bar.workspace.inactive.background.color: #0f0f0f
-i3-wm.bar.workspace.inactive.text.color: #aaaaaa
-
-i3-wm.bar.workspace.urgent.border.color: #0f0f0f
-i3-wm.bar.workspace.urgent.background.color: #0f0f0f
-i3-wm.bar.workspace.urgent.text.color: #aaff88
-
-i3-wm.bar.trayoutput: none
-i3-wm.bar.height: 32
-
 ! border
-i3-wm.client.focused.color.child_border: #003300
+i3-wm.client.focused.color.child_border: #61afef
 
 ! fonts
-i3-wm.bar.font: pango:Hack Nerd Font Mono 10
 i3-wm.font: pango:Hack Nerd Font Mono 16
 
-i3-wm.bar.stripworkspacenumbers: yes
 

@@ -28,4 +28,5 @@ ln -sf `pwd`/eww/eww.scss $XDG_CONFIG_HOME/eww/eww.scss
 ln -sf `pwd`/eww/bin/workspaces $XDG_CONFIG_HOME/eww/bin/workspaces
 ln -sf `pwd`/eww/bin/weather $XDG_CONFIG_HOME/eww/bin/weather
 ln -sf `pwd`/eww/scripts/player.sh $XDG_CONFIG_HOME/eww/scripts/player.sh
+ln -sf `pwd`/eww/scripts/progress.sh $XDG_CONFIG_HOME/eww/scripts/progress.sh
 ln -sf `pwd`/eww/scripts/interface.sh $XDG_CONFIG_HOME/eww/scripts/interface.sh

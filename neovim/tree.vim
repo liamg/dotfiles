@@ -1,6 +1,7 @@
 " -------------------------------------------------------------------------------------------------
 " nvim-tree settings
 " -------------------------------------------------------------------------------------------------
+let g:nvim_tree_quit_on_open = 1
 lua << EOF
 require'nvim-tree'.setup {
         disable_netrw       = true,
@@ -8,7 +9,7 @@ require'nvim-tree'.setup {
         open_on_setup       = false,
         ignore_ft_on_setup  = {},
         update_to_buf_dir   = {
-          enable = true,
+          enable = false,
           auto_open = true,
         },
         auto_close          = true,

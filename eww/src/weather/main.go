@@ -1,15 +1,15 @@
 package main
 
 import (
-"encoding/json"
-"fmt"
-"net/http"
-"os"
-"path/filepath"
-"strings"
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"os"
+	"path/filepath"
+	"strings"
 )
 
-var icons = map[string]string {
+var icons = map[string]string{
 	"01d": "\uF185", // day clear
 	"01n": "\uF186", // night clear
 	"02d": "\uF0C2", // day few clouds
@@ -30,12 +30,11 @@ var icons = map[string]string {
 	"50n": "\uF773", // night mist
 }
 
-
 type weather struct {
-	Weather []struct{
-		Main string `json:"main"`
+	Weather []struct {
+		Main        string `json:"main"`
 		Description string `json:"description"`
-		Icon string `json:"icon"`
+		Icon        string `json:"icon"`
 	} `json:"weather"`
 	Main struct {
 		FeelsLike float32 `json:"feels_like"`
@@ -59,19 +58,21 @@ func main() {
 		panic(err)
 	}
 
-	defer func() {_ = resp.Body.Close()}()
+	defer func() { _ = resp.Body.Close() }()
 
 	var w weather
 	if err := json.NewDecoder(resp.Body).Decode(&w); err != nil {
 		panic(err)
 	}
 
-	data, _ := json.Marshal(struct{
-		Icon string `json:"icon"`
+	data, _ := json.Marshal(struct {
+		Icon        string `json:"icon"`
 		Description string `json:"description"`
+		Temperature string `json:"temperature"`
 	}{
-		Icon: icons[w.Weather[0].Icon],
-		Description: fmt.Sprintf("%s - %.0f%c ", strings.Title(w.Weather[0].Description), w.Main.FeelsLike, degrees),
+		Icon:        icons[w.Weather[0].Icon],
+		Description: strings.Title(w.Weather[0].Description),
+		Temperature: fmt.Sprintf("%.0f%c ", w.Main.FeelsLike, degrees),
 	})
 	fmt.Printf("%s", string(data))
 }

@@ -619,29 +619,6 @@ set_from_resource $i3-wm.bar.height i3-wm.bar.height
 # i3xrocks config file. Override this for a custom status bar generator.
 set_from_resource $i3-wm.bar.status_command i3-wm.bar.status_command i3xrocks -u ~/.config/regolith/i3xrocks/conf.d -d /etc/regolith/i3xrocks/conf.d
 
-# The bar configuration
-bar {
-  position $i3-wm.bar.position
-  mode $i3-wm.bar.mode
-  font $i3-wm.bar.font
-  separator_symbol $i3-wm.bar.separator
-  status_command $i3-wm.bar.status_command
-  tray_output $i3-wm.bar.trayoutput
-  strip_workspace_numbers $i3-wm.bar.stripworkspacenumbers
-  height $i3-wm.bar.height
-
-  colors {
-      background $i3-wm.bar.background.color
-      statusline $i3-wm.bar.statusline.color
-      separator  $i3-wm.bar.separator.color
-
-#                        BORDER  BACKGROUND TEXT
-      focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
-      active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
-      inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
-      urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
-  }
-}
 
 ###############################################################################
 # External programs launched with i3

@@ -14,12 +14,12 @@ $dim: $grey;
 $background: #222222;
 $highlight: $white;
 $foreground: $dim;
-//$shadow: #333333;
-$shadow: $background;
+$inset: $background;
 $error: $red;
 $warning: $yellow;
 $ok: $blue;
 $icon: $white;
+$shadow: $black;
 
 * {
   all: unset;
@@ -38,12 +38,12 @@ window {
 
 .recess {
   margin: 0 10px 0 10px;
-  background-color: $shadow;
+  background-color: $inset;
   //border-radius: 32px;
   border-radius: 8px;
   padding: 2px 7px 2px 7px;
   color: $foreground;
-  box-shadow:         inset 0 0 5px #000000;
+  box-shadow: inset 0 0 5px $shadow;
 }
 
 .icon-module {
@@ -61,7 +61,7 @@ window {
 
   button {
 	color: $dim;
-    margin: 0px 13px;
+    margin: 0px 10px 0 10px;
   }
   button.focused {
     color: $highlight;
@@ -73,7 +73,7 @@ window {
 
 .metric {
 scale trough {
-            background-color: $background;
+            background-color: $shadow;
             border-radius: 48px;
             min-height: 1px;
             min-width: 48px;
@@ -98,9 +98,11 @@ scale trough {
 }
 
 .player button {
-color: $dim;
-margin-left:10px;
+	color: $dim;
 }
 .player button:hover {
     color: $highlight;
+}
+.player label.current {
+	min-width: 200px;
 }
