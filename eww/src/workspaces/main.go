@@ -15,24 +15,21 @@ func main() {
 		panic("please supply output number")
 	}
 
-	index, err := strconv.Atoi(os.Args[1])
-	if err != nil {
-		panic(err)
-	}
+	primary := os.Args[1] == "primary"
 
-	updateWorkspaces(index)
+	updateWorkspaces(primary)
 
 	subscription := i3.Subscribe(i3.WorkspaceEventType)
 	for subscription.Next() {
 		event := subscription.Event()
 		switch event.(type) {
 		case *i3.WorkspaceEvent:
-			updateWorkspaces(index)
+			updateWorkspaces(primary)
 		}
 	}
 }
 
-func updateWorkspaces(outputIndex int) {
+func updateWorkspaces(primary bool) {
 	workspaces, err := i3.GetWorkspaces()
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
@@ -45,8 +42,10 @@ func updateWorkspaces(outputIndex int) {
 		fmt.Printf("Error: %s\n", err)
 		return
 	}
-	if outputIndex < len(outputs) {
-		outputName = outputs[outputIndex].Name
+	for _, output := range outputs {
+		if output.Primary == primary {
+			outputName = output.Name
+		}
 	}
 
 	// open box

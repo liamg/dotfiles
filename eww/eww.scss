@@ -1,15 +1,25 @@
-$foreground: #ffffff;
 $grey: #aaaaaa;
-$foreground-alt: #465059;
-$background: #0e1419;
+$foreground-alt: #777777;
 $black: #000000;
 $red: #ff6565;
 $green: #b8cc52;
 $yellow: #e6c446;
-$blue: #68d4ff;
+$blue: #61afef;
 $magenta: #ffa3aa;
 $cyan: #36a3d9;
 $white: #ffffff;
+$purple: #c678dd;
+
+$dim: $grey;
+$background: #222222;
+$highlight: $white;
+$foreground: $dim;
+//$shadow: #333333;
+$shadow: $background;
+$error: $red;
+$warning: $yellow;
+$ok: $blue;
+$icon: $white;
 
 * {
   all: unset;
@@ -21,34 +31,76 @@ window {
 
 .bar {
   font-family: "Hack Regular";
-  font-size: 13px;
+  font-size: 12px;
   margin: 0 10px;
+  padding: 6px;
+}
+
+.recess {
+  margin: 0 10px 0 10px;
+  background-color: $shadow;
+  //border-radius: 32px;
+  border-radius: 8px;
+  padding: 2px 7px 2px 7px;
+  color: $foreground;
+  box-shadow:         inset 0 0 5px #000000;
 }
 
 .icon-module {
+  font-size: 12px;
   margin: 0 5px;
   & > &__icon {
     margin-right: 5px;
-    font-family: "Hack Regular";
+    color: $icon;
   }
 }
-
 
 .workspaces {
-  font-family: "Hack Regular";
-  font-size: 28px;
-  margin-right: 20px;
+
+  font-size:24px;
 
   button {
-	color: #888888;
-    margin: 0px 3px;
+	color: $dim;
+    margin: 0px 13px;
   }
   button.focused {
-    color: #ffffff;
+    color: $highlight;
   }
   button.urgent {
-	color: red;
+	color: $error;
   }
+}
+
+.metric {
+scale trough {
+            background-color: $background;
+            border-radius: 48px;
+            min-height: 1px;
+            min-width: 48px;
+            margin-left: 8px;
+
+        }
+    scale trough highlight {
+        color: $foreground-alt;
+        background-color: $background;
+        border-radius: 10px;
+    }
+    scale.normal trough highlight {
+        background-color: $ok;
+    }
+    scale.warning trough highlight {
+      background-color: $warning;
+    }
+    scale.error trough highlight {
+      background-color: $error;
+      }
 
 }
 
+.player button {
+color: $dim;
+margin-left:10px;
+}
+.player button:hover {
+    color: $highlight;
+}

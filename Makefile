@@ -16,6 +16,11 @@ eww:
 ## eww: install eww for a custom bar/widgets (see eww/install.sh)
 	@./eww/install.sh
 
+.PHONY: nodejs
+nodejs:
+## nodejs: install latest LTS version of nodejs (see nodejs/install.sh)
+	@./nodejs/install.sh
+
 .PHONY: rust
 rust:
 	## rust: install rust via rustup (see rust/install.sh)
