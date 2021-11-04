@@ -53,6 +53,8 @@ ln -sf `pwd`/neovim/snippets.vim $XDG_CONFIG_HOME/nvim/snippets.vim
 ln -sf `pwd`/neovim/functions.vim $XDG_CONFIG_HOME/nvim/functions.vim
 ln -sf `pwd`/neovim/hacks.vim $XDG_CONFIG_HOME/nvim/hacks.vim
 
+pip3 install neovim
+
 log_info neovim   "Installing plugins..."
 nvim +PlugInstall +qall
 nvim +GoInstallBinaries +qall

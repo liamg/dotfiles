@@ -11,10 +11,10 @@ $white: #ffffff;
 $purple: #c678dd;
 
 $dim: $grey;
-$background: #222222;
+$background: #0f0f0f;
+$inset: $background;
 $highlight: $white;
 $foreground: $dim;
-$inset: $background;
 $error: $red;
 $warning: $yellow;
 $ok: $blue;
@@ -40,7 +40,6 @@ window {
 .recess {
   margin: 0 10px 0 10px;
   background-color: $inset;
-  //border-radius: 32px;
   border-radius: 8px;
   padding: 2px 7px 2px 7px;
   color: $foreground;

@@ -1,20 +1,49 @@
 ; windows
-(defwindow bar
+(defwindow topbar
   :monitor 0
   :hexpand false
   :vexpand false
   :geometry (geometry :x 0 :y 0 :width "100%")
   :anchor "top left"
   :reserve (struts :distance "10px" :side "top")
-  (bar :screen "primary"))
+  (topbar :screen "primary"))
 
-(defwidget bar [screen]
+(defwidget topbar [screen]
   (centerbox :orientation "h"
        :class "bar"
     (box :halign "start"
          :space-evenly false
       (workspaces :screen "${screen}")
-     
+	 (player)
+	  )
+    (box :halign "center"
+        :spacing 12
+         :space-evenly false
+         (datetime)
+            )
+    (box :halign "end"
+         :spacing 12
+         :hexpand true
+         :space-evenly false
+      (system)
+      (networking)
+  )))
+
+(defwindow bottombar
+  :monitor 0
+  :hexpand false
+  :vexpand false
+  :geometry (geometry :x 0 :y 0 :width "100%")
+  :anchor "bottom left"
+  :reserve (struts :distance "10px" :side "bottom")
+  (topbar :screen "primary"))
+
+(defwidget bottombar [screen]
+  (centerbox :orientation "h"
+       :class "bar"
+    (box :halign "start"
+         :space-evenly false
+      (workspaces :screen "${screen}")
 	 (player)
 	  )
     (box :halign "center"

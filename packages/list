@@ -2,6 +2,7 @@ bat
 build-essential
 cmake
 curl
+dunst
 fd-find
 flameshot
 git
