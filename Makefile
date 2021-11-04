@@ -8,7 +8,7 @@ help:
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' | sed -e 's/^/-/'
 
 .PHONY: install
-install: go packages rust nodejs hack xresources-install i3-install gnome-terminal eww bumblebee-status zsh git neovim wallpaper i3-restart ncspot
+install: go packages docker rust nodejs hack xresources-install i3-install gnome-terminal eww bumblebee-status zsh git neovim wallpaper i3-restart ncspot
 ## install: Install/configure everything. Should be idempotent.
 
 .PHONY: eww
@@ -20,6 +20,11 @@ eww:
 nodejs:
 ## nodejs: install latest LTS version of nodejs (see nodejs/install.sh)
 	@./nodejs/install.sh
+
+.PHONY: docker
+docker:
+	## docker: install latest stable docker (see docker/install.sh)
+	@./docker/install.sh
 
 .PHONY: rust
 rust:

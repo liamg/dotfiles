@@ -1,11 +1,13 @@
 bat
 build-essential
+ca-certificates
 cmake
 curl
 dunst
 fd-find
 flameshot
 git
+gnupg
 htop
 jq
 libasound2-dev
@@ -22,6 +24,7 @@ libxcb1-dev
 libxcb-render0-dev
 libxcb-shape0-dev
 libxcb-xfixes0-dev
+lsb-release
 pkg-config
 playerctl
 python3-dev

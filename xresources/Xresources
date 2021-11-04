@@ -5,8 +5,7 @@ gnome.terminal.update: false
 i3-wm.program.notifications: /usr/bin/dunst
 
 ! startup
-i3-wm.program.1: eww daemon
-i3-wm.program.2: sh -c 'sleep 1 && eww open topbar && eww open bottombar'
+i3-wm.program.1: eww open topbar
 
 ! workspace names
 #define WORKSPACE_NAME(INDEX, FONT, COLOR, GLYPH)

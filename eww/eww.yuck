@@ -29,36 +29,6 @@
       (networking)
   )))
 
-(defwindow bottombar
-  :monitor 0
-  :hexpand false
-  :vexpand false
-  :geometry (geometry :x 0 :y 0 :width "100%")
-  :anchor "bottom left"
-  :reserve (struts :distance "10px" :side "bottom")
-  (topbar :screen "primary"))
-
-(defwidget bottombar [screen]
-  (centerbox :orientation "h"
-       :class "bar"
-    (box :halign "start"
-         :space-evenly false
-      (workspaces :screen "${screen}")
-	 (player)
-	  )
-    (box :halign "center"
-        :spacing 12
-         :space-evenly false
-         (datetime)
-            )
-    (box :halign "end"
-         :spacing 12
-         :hexpand true
-         :space-evenly false
-      (system)
-      (networking)
-  )))
-
 ; vars
 (defpoll time_poll :interval "1s" "date +%H:%M:%S")
 (defpoll date_poll :interval "1m" "date +'%A %-d %B'")
