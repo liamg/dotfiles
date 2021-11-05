@@ -1,0 +1,24 @@
+
+(defvar docker_show false)
+(defpoll docker_containers :interval "1s" "docker ps -q | wc -l")
+(defpoll docker_space :interval "1s" "./widgets/docker/scripts/space.sh")
+
+(defwidget docker []
+    (clickbox :var docker_show :varname "docker_show" :transition "slideleft"
+      (icon-box :class "docker_summary" :icon ""
+        (label :text "${docker_containers} running")
+      )
+      (box
+        :class "docker_controls"
+        :space-evenly false
+        :spacing 10
+        (icon-box :icon "" (label :text "${docker_space.images}"))
+        (icon-box :icon "" (label :text "${docker_space.containers}"))
+        (icon-box :icon "" (label :text "${docker_space.volumes}"))
+
+        (termbutton :command "lazydocker" :class "ok" (label :text " Lazydocker"))
+        (button :onclick "docker system prune -f" :class "good" (label :text " Reclaim space"))
+        (button :onclick "docker ps -qa | xargs docker stop" :class "warning" (label :text " Stop all containers"))
+      )
+    )
+)

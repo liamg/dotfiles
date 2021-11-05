@@ -1,0 +1,12 @@
+
+(defpoll weather_poll :interval "1h" "eww-weather Southampton,UK")
+
+(defwidget weather []  
+  (icon-box
+    :class "weather" 
+    :icon "${weather_poll.icon}"
+    (label 
+      :text "${weather_poll.temperature}"
+    )
+  )
+)

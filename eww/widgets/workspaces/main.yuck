@@ -1,0 +1,7 @@
+
+(deflisten workspaces_listen "eww-workspaces primary")
+(defwidget workspaces [screen]
+  (box
+    (literal :class "workspaces" :content workspaces_listen)
+  )
+)

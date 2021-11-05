@@ -1,0 +1,37 @@
+
+(deflisten player_current "./widgets/player/scripts/player.sh")
+(deflisten player_status "playerctl status -F")
+(deflisten player_progress "./widgets/player/scripts/progress.sh")
+
+(defwidget player []
+	(box
+         :orientation "h"
+		 :spacing 10
+		 :hexpand false
+         :halign "center"
+         :space-evenly false
+         :class "player" :visible {player_current != ""}
+    (termbutton :command "lyric" :width 600 :height 1000
+      (label :class "current" :text player_current)
+    )
+    (button
+        :onclick "playerctl previous"
+        (label :text "")
+    )
+    (button
+        :visible {player_status == "Paused" }
+        :onclick "playerctl play"
+        (label :text "")
+    )
+    (button
+        :visible {player_status == "Playing" }
+        :onclick "playerctl pause"
+        (label :text "")
+    )
+    (button
+        :onclick "playerctl next"
+        (label :text "")
+    )
+     (label :text player_progress)
+    ))
+

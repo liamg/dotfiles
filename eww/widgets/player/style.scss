@@ -1,0 +1,12 @@
+.player {
+	font-size: 0.9em;
+}
+.player button {
+	color: $dim;
+}
+.player button:hover {
+    color: $highlight;
+}
+.player label.current {
+	min-width: 200px;
+}

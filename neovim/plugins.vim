@@ -18,6 +18,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'puremourning/vimspector'
 Plug 'tpope/vim-fugitive'
 Plug 'aquasecurity/vim-tfsec'
+Plug 'elkowar/yuck.vim'
 call plug#end()
 
 

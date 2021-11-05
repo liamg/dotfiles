@@ -1,0 +1,22 @@
+(defwidget system []
+(box
+    (disk)
+      (ram)
+      (cpu)
+      ))
+
+(defwidget cpu []
+  (termbutton :command "htop" 
+    (metric :icon "" :input {round(EWW_CPU.avg, 0)}))
+  )
+
+(defwidget disk []
+  (termbutton :command "htop" 
+    (metric :icon "" :input "${round(EWW_DISK["/"].used_perc, 0)}"))
+  )
+
+(defwidget ram []
+  (termbutton :command "htop" 
+    (metric :icon "" :input "${round(EWW_RAM.used_mem_perc, 0)}"))
+  )
+

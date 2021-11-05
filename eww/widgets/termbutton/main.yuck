@@ -1,0 +1,10 @@
+
+; a button which launches a command inside of a new terminal window
+(defwidget termbutton [command ?floating ?class ?width ?height]
+    (button 
+      :class class 
+      :timeout "1m"
+      :onclick "gnome-terminal -- sh -c '${floating == false ? "" : "i3-msg floating enable; i3-msg resize set ${ width != "" ? "${width}" : "800"} px ${ height != "" ? "${height}" : "600"} px; i3-msg move position center && clear && "}${command}'"
+      (children)
+    )
+)

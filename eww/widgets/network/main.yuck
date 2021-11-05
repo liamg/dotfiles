@@ -1,0 +1,12 @@
+
+(defpoll interface_poll :interval "1m" "./widgets/network/scripts/interface.sh")
+(defwidget network []
+  (icon-box 
+    :class "network" 
+    :icon ""
+    :visible {interface_poll != ""}
+    (label :text "${round(EWW_NET[interface_poll].NET_UP / 1000000, 2)}  ${round(EWW_NET[interface_poll].NET_DOWN / 1000000, 2)} ")
+    )
+ )
+
+

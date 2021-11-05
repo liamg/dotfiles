@@ -1,26 +1,11 @@
-$grey: #aaaaaa;
-$foreground-alt: #777777;
-$black: #000000;
-$red: #ff6565;
-$green: #b8cc52;
-$yellow: #e6c446;
-$blue: #61afef;
-$magenta: #ffa3aa;
-$cyan: #36a3d9;
-$white: #ffffff;
-$purple: #c678dd;
 
-$dim: $grey;
-$background: #0f0f0f;
-$inset: $background;
-$highlight: $white;
-$foreground: $dim;
-$error: $red;
-$warning: $yellow;
-$ok: $blue;
-$icon: $white;
-$shadow: $black;
-$accent: $blue;
+@import "./themes/dark.scss";
+@import "./widgets/recess/style.scss";
+@import "./widgets/metric/style.scss";
+@import "./widgets/icon/style.scss";
+@import "./widgets/workspaces/style.scss";
+@import "./widgets/player/style.scss";
+@import "./widgets/docker/style.scss";
 
 * {
   all: unset;
@@ -32,77 +17,23 @@ window {
 
 .bar {
   font-family: "Hack Regular";
-  font-size: 12px;
+  font-size: 1em;
   margin: 0 10px;
   padding: 6px;
 }
 
-.recess {
-  margin: 0 10px 0 10px;
-  background-color: $inset;
-  border-radius: 8px;
-  padding: 2px 7px 2px 7px;
-  color: $foreground;
-  box-shadow: inset 0 0 3px 3px $shadow;
-}
-
-.icon-module {
-  font-size: 12px;
-  margin: 0 5px;
-  & > &__icon {
-    margin-right: 5px;
-    color: $icon;
-  }
-}
-
-.workspaces {
-
-  font-size:24px;
-
-  button {
-	color: $dim;
-    margin: 0px 10px 0 10px;
-  }
-  button.focused {
-    color: $highlight;
-  }
-  button.urgent {
+button.error {
 	color: $error;
-  }
 }
-
-.metric {
-scale trough {
-            background-color: $shadow;
-            border-radius: 48px;
-            min-height: 1px;
-            min-width: 48px;
-            margin-left: 8px;
-
-        }
-    scale trough highlight {
-        color: $foreground-alt;
-        background-color: $background;
-        border-radius: 10px;
-    }
-    scale.normal trough highlight {
-        background-color: $accent;
-    }
-    scale.warning trough highlight {
-      background-color: $warning;
-    }
-    scale.error trough highlight {
-      background-color: $error;
-      }
-
+button.warning {
+	color: $warning;
 }
-
-.player button {
-	color: $dim;
+button.ok {
+	color: $ok;
 }
-.player button:hover {
-    color: $highlight;
+button.good {
+	color: #44cc22;
 }
-.player label.current {
-	min-width: 200px;
+button:hover label {
+	color: $highlight;
 }

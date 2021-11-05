@@ -1,0 +1,11 @@
+(defpoll time_poll :interval "1s" "date +%H:%M:%S")
+(defpoll date_poll :interval "1m" "date +'%A %-d %B'")
+
+(defwidget date []
+  (icon-box :class "date" :icon "" 
+    (label :text date_poll)))
+
+(defwidget time []
+  (icon-box :class "time" :icon "" 
+    (label :text time_poll))) 
+

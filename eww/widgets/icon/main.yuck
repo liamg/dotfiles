@@ -1,0 +1,10 @@
+
+(defwidget icon-box [icon ?class ?visible ?input]
+  (box :class "${class} icon-box"
+       :orientation "h"
+       :halign "end"
+       :space-evenly false
+       :visible {visible ?: true}
+    (label :class "icon-box-icon" :text "${icon}")
+    (children)))
+

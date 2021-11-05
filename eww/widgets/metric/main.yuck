@@ -1,0 +1,12 @@
+(defwidget metric [icon input ?onchange]
+(icon-box :icon icon
+       :class "metric"
+       :input input
+    (scale :class {input > 50 ? input > 75 ? "error" : "warning" : "normal"}
+           :min 0
+           :max 100
+           :active true
+           :value input))
+          )
+
+
