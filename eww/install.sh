@@ -20,6 +20,10 @@ popd
 pushd ./eww/widgets/weather/src
 go build -o $HOME/.local/bin/eww-weather .
 popd
+pushd ./eww/widgets/github/src
+go build -o $HOME/.local/bin/eww-github .
+popd
+
 
 rm -rf $XDG_CONFIG_HOME/eww
 ln -s `pwd`/eww $XDG_CONFIG_HOME/eww

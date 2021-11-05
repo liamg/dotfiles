@@ -1,6 +1,7 @@
 
-.docker_summary .icon-box-icon {
+label.docker_summary {
 	color: #0db7ed;
+	font-size:1.6em; /* docker icon is tiny for some reason */
 }
 
 .docker_controls {

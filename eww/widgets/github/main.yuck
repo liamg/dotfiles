@@ -1,8 +1,17 @@
 
+(defpoll github_stats :interval "15m" "eww-github")
+(defvar github_show false)
 
 (defwidget github []
-(recess
-  (label :text "github goes here")
-)
+    (clickbox :var github_show :varname "github_show" :transition "slideleft"
+      (label :class "github_summary" :text "")
+      (box
+        :class "github_controls"
+        :orientation "h"
+        :space-evenly false
+        :spacing 10
+        (literal :content github_stats)
+      )
+    )
 )
 

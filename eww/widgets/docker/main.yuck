@@ -5,13 +5,13 @@
 
 (defwidget docker []
     (clickbox :var docker_show :varname "docker_show" :transition "slideleft"
-      (icon-box :class "docker_summary" :icon ""
-        (label :text "${docker_containers} running")
-      )
+      (label :class "docker_summary" :text "")
       (box
         :class "docker_controls"
         :space-evenly false
         :spacing 10
+        
+        (icon-box :icon "" (label :text "${docker_containers}"))
         (icon-box :icon "" (label :text "${docker_space.images}"))
         (icon-box :icon "" (label :text "${docker_space.containers}"))
         (icon-box :icon "" (label :text "${docker_space.volumes}"))

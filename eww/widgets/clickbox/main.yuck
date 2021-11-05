@@ -9,6 +9,7 @@
               :duration {duration ?: "500ms"}
       (box :class "${class}" 
            :space-evenly false
+          :orientation "h"
         (children :nth 1)
         (button :onclick "eww update ${varname}=false" :class "error" (label :text " Cancel"))
       )

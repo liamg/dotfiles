@@ -1,11 +1,5 @@
 
 @import "./themes/dark.scss";
-@import "./widgets/recess/style.scss";
-@import "./widgets/metric/style.scss";
-@import "./widgets/icon/style.scss";
-@import "./widgets/workspaces/style.scss";
-@import "./widgets/player/style.scss";
-@import "./widgets/docker/style.scss";
 
 * {
   all: unset;
@@ -37,3 +31,11 @@ button.good {
 button:hover label {
 	color: $highlight;
 }
+
+@import "./widgets/recess/style.scss";
+@import "./widgets/metric/style.scss";
+@import "./widgets/icon/style.scss";
+@import "./widgets/workspaces/style.scss";
+@import "./widgets/player/style.scss";
+@import "./widgets/docker/style.scss";
+
