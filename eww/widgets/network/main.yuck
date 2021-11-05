@@ -1,12 +1,20 @@
 
+(defpoll ip_poll :interval "15m" "dig +short myip.opendns.com @resolver1.opendns.com")
 (defpoll interface_poll :interval "1m" "./widgets/network/scripts/interface.sh")
+(defvar network_show false)
 (defwidget network []
-  (icon-box 
-    :class "network" 
-    :icon ""
-    :visible {interface_poll != ""}
-    (label :text "${round(EWW_NET[interface_poll].NET_UP / 1000000, 2)}  ${round(EWW_NET[interface_poll].NET_DOWN / 1000000, 2)} ")
+  (clickbox :var network_show :varname "network_show"
+    (icon-box 
+      :class "network" 
+      :icon ""
+      :visible {interface_poll != ""}
+    (label :text "${round(EWW_NET[interface_poll].NET_UP / 1000000, 2)} ")
+    (label :text "${round(EWW_NET[interface_poll].NET_DOWN / 1000000, 2)} ")
     )
+    (box :space-evenly false
+      (label :class "faint" :text "${ip_poll}")
+    )
+  )
  )
 
 

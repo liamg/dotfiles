@@ -16,17 +16,20 @@ window {
   padding: 6px;
 }
 
-button.error {
+.error {
 	color: $error;
 }
-button.warning {
+.warning {
 	color: $warning;
 }
-button.ok {
-	color: $ok;
+.ok {
+    color: $ok;
 }
-button.good {
+.good {
 	color: #44cc22;
+}
+.faint {
+	color: $faint;
 }
 button:hover label {
 	color: $highlight;

@@ -14,11 +14,6 @@ import (
 var toCheck = []string{
 	"aquasecurity/tfsec",
 	"aquasecurity/cfsec",
-	"liamg/darktile",
-	"liamg/traitor",
-	"liamg/gitjacker",
-	"liamg/scout",
-	"liamg/lambo",
 }
 
 func main() {

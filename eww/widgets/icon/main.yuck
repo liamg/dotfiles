@@ -3,6 +3,7 @@
   (box :class "${class} icon-box"
        :orientation "h"
        :halign "end"
+       :spacing 5
        :space-evenly false
        :visible {visible ?: true}
     (label :class "icon-box-icon" :text "${icon}")
