@@ -34,7 +34,7 @@ func main() {
 		}
 		matchedRepo := result.Repositories[0]
 		url := fmt.Sprintf("https://github.com/%s", check)
-		fmt.Printf(`(button :onclick "xdg-open %s" (label :text "%s %d"))`, url, repo, *matchedRepo.StargazersCount)
+		fmt.Printf(`(button :class "github_repo" :onclick "xdg-open %s" (label :text "%s %d"))`, url, repo, *matchedRepo.StargazersCount)
 	}
 	fmt.Print(")")
 }
