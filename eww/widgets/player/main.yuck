@@ -19,12 +19,12 @@
         (label :text "")
     )
     (button
-        :visible {player_status == "Paused" }
+        :visible { player_status != "Playing" }
         :onclick "playerctl play"
         (label :text "")
     )
     (button
-        :visible {player_status == "Playing" }
+        :visible { player_status == "Playing" }
         :onclick "playerctl pause"
         (label :text "")
     )

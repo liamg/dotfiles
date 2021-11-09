@@ -27,7 +27,7 @@
     
     (box :halign "start" :space-evenly false
         (workspaces :screen "${screen}")
-        (recess
+        (recess :visible {player_current != ""}
           (player)
         )
 	)
