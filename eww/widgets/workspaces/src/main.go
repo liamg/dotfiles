@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 
@@ -11,25 +10,19 @@ import (
 
 func main() {
 
-	if len(os.Args) <= 1 {
-		panic("please supply output number")
-	}
-
-	primary := os.Args[1] == "primary"
-
-	updateWorkspaces(primary)
+	updateWorkspaces()
 
 	subscription := i3.Subscribe(i3.WorkspaceEventType)
 	for subscription.Next() {
 		event := subscription.Event()
 		switch event.(type) {
 		case *i3.WorkspaceEvent:
-			updateWorkspaces(primary)
+			updateWorkspaces()
 		}
 	}
 }
 
-func updateWorkspaces(primary bool) {
+func updateWorkspaces() {
 	workspaces, err := i3.GetWorkspaces()
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
@@ -42,8 +35,10 @@ func updateWorkspaces(primary bool) {
 		fmt.Printf("Error: %s\n", err)
 		return
 	}
+	var widest int64
 	for _, output := range outputs {
-		if output.Primary == primary {
+		if output.Active && output.Rect.Width > widest {
+			widest = output.Rect.Width
 			outputName = output.Name
 		}
 	}

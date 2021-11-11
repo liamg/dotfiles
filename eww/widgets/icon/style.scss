@@ -1,7 +1,8 @@
 .icon-box {
   font-size: 1em;
   margin: 0 5px;
-  & > &-icon {
+
+  .icon-box-icon {
     margin-right: 7px;
     color: $icon;
   }
