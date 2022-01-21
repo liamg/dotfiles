@@ -1,3 +1,5 @@
+# ARCHIVED - I now use [liamg/peridot-config](https://github.com/liamg/peridot-config)
+
 # Personal Dotfiles
 
 ## Requirements
